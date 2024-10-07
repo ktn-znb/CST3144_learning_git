@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+    <title>Computed</title>
+  </head>
+  <body>
+    <div id="App">
+      <p>Are is equal to: {{area}}</p>
+      <p>
+        <button v-on:click="length += 1">Add length</button>
+        <p v-text="length"></p>
+        <button v-on:click=" width += 1">Add width</button>
+        <p v-text="width"></p>
+      </p>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#App",
+        data: {
+          length: 5,
+          width: 3,
+        },
+        computed: {
+          area: function () {
+            return this.width * this.length;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
